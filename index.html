@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Freeref is pretty cool referencing software">
+    <meta name="author" content="crgmg.com">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
+    <title>Freeref</title>
+  </head>
+  <body>
+    <div class="container shadow-lg maincont">
+      <img alt="FREEREF" src="logo.png" width="500px">
+      <h1 class="sub-title">Welcome to Freeref!</h1>
+      <p class="sub-sub-title">Freeref is simple, open-source reference generation software. It creates Harvard-style referencing easily.</p>
+
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#web" type="button" role="tab" aria-selected="true">Website</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#book" type="button" role="tab" aria-selected="false">Book</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#img" type="button" role="tab" aria-selected="false">Image</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#journal" type="button" role="tab" aria-selected="false">Journal</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#about" type="button" role="tab" aria-selected="false">About</button>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="web" role="tabpanel">
+          <input type="text" placeholder="Author (Smith, J)" id="w-author" class="form-control referenceput">
+          <input type="text" placeholder="Year (2021 [n. d. if no year])" id="w-year" class="form-control referenceput">
+          <input type="text" placeholder="Title of Page (What is Freeref?)" id="w-title" class="form-control referenceput">
+          <input type="text" placeholder="URL (https://freeref.nl/example)" id="w-url" class="form-control referenceput">
+          <input type="text" placeholder="Day accessed (16)" id="w-day" class="form-control referenceput">
+          <input type="text" placeholder="Month accessed (November)" id="w-month" class="form-control referenceput">
+          <input type="text" placeholder="Year accessed (2021)" id="w-acyear" class="form-control referenceput">
+          <input type="submit" onclick="web()" class="btn btn-primary submitbtn"><br><br>
+          <span class="result" id="w-result"></span>
+        </div>
+        <div class="tab-pane fade" id="book" role="tabpanel">
+          <input type="text" placeholder="Author (Generic, J)" id="b-author" class="form-control referenceput">
+          <input type="text" placeholder="Year of Publication (2021 [n. d. if no year])" id="b-year" class="form-control referenceput">
+          <input type="text" placeholder="Title of Book (How to be sus)" id="b-title" class="form-control referenceput">
+          <input type="text" placeholder="Publisher (ZXI Press)" id="b-pub" class="form-control referenceput">
+          <input type="text" placeholder="Place of Publication (Melbourne)" id="b-publoc" class="form-control referenceput">
+          <input type="submit" onclick="book()" class="btn btn-primary submitbtn"><br><br>
+          <span class="result" id="b-result"></span>
+        </div>
+        <div class="tab-pane fade" id="img" role="tabpanel">
+          <input type="text" placeholder="Author (Smith, J)" id="i-author" class="form-control referenceput">
+          <input type="text" placeholder="Year (2021 [n. d. if no year])" id="i-year" class="form-control referenceput">
+          <input type="text" placeholder="Image Title or Description (A concert)" id="i-title" class="form-control referenceput">
+          <input type="text" placeholder="Container / Distributor (The Freeref Times)" id="i-container" class="form-control referenceput">
+          <input type="text" placeholder="URL (https://freeref.nl/example/jpg)" id="i-url" class="form-control referenceput">
+          <input type="text" placeholder="Day accessed (16)" id="i-day" class="form-control referenceput">
+          <input type="text" placeholder="Month accessed (November)" id="i-month" class="form-control referenceput">
+          <input type="text" placeholder="Year accessed (2021)" id="i-acyear" class="form-control referenceput">
+          <input type="submit" onclick="img()" class="btn btn-primary submitbtn"><br><br>
+          <span class="result" id="i-result"></span>
+        </div>
+        <div class="tab-pane fade" id="journal" role="tabpanel">
+          <input type="text" placeholder="Author (Smith, J)" id="j-author" class="form-control referenceput">
+          <input type="text" placeholder="Year of Publication (2021 [n. d. if no year])" id="j-year" class="form-control referenceput">
+          <input type="text" placeholder="Article Title (How Freeref helps people)" id="j-atitle" class="form-control referenceput">
+          <input type="text" placeholder="Journal Title (Freeref Sciences)" id="j-jtitle" class="form-control referenceput">
+          <input type="text" placeholder="Journal Volume (4)" id="j-volume" class="form-control referenceput">
+          <input type="text" placeholder="Journal Issue (34)" id="j-issue" class="form-control referenceput">
+          <input type="text" placeholder="Page range from... (45)" id="j-from" class="form-control referenceput">
+          <input type="text" placeholder="to... (49)" id="j-to" class="form-control referenceput">
+          <input type="submit" onclick="journal()" class="btn btn-primary submitbtn"><br><br>
+          <span class="result" id="j-result"></span>
+        </div>
+        <div class="tab-pane fade" id="about" role="tabpanel">
+          <h1>About Freeref</h1>
+          <p>Freeref is simple, open source referencing software. It was created in 2020, and was originally hosted at <code>crgmg.com</code>. As of November 2021, Freeref has its own domain at <code>freeref.nl</code>. Why .nl? It was the cheapest one with privacy protection. <a href="https://github.com/charlierg20/freeref">The GitHub Page</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
